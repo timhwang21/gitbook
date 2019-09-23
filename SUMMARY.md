@@ -7,8 +7,8 @@
 * React
   * [Replace JSX tag](programming/react/replace-jsx-tag.md)
 * Typescript
-  * Type tricks
-    * [`curryRecord`](programming/typescript/type-tricks/curry-record.md)
+  * [`curryRecord`](programming/typescript/curry-record.md)
+  * [Exhaustive conditionals with ADTs](programming/typescript/exhaustive-conditionals-with-adts.md)
 
 ## CLI
 

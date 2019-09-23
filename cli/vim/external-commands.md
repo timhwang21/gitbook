@@ -20,9 +20,16 @@ You can easily pass Markdown (or any other text format) files straight through `
 
 ## Buffer processing with `:%:`
 
-Processing can be achieved by calling `%! external_fn` to replace buffer contents in-place. In this example, we pipe a JSON file through `jq` to prettify.
+Processing can be achieved by calling `%! !external_fn` to replace buffer contents in-place.
+
+In this example, we pipe a JSON file through `jq` to prettify:
 
 ```sh
-%: jq '.'
+:%: !jq '.'
 ```
 
+In this example, we convert the current file from Markdown to HTML using `pandoc`:
+
+```sh
+:%: !pandoc -f markdown -t html
+```
