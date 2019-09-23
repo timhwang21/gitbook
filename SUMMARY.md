@@ -9,6 +9,7 @@
 * Typescript
   * [`curryRecord`](programming/typescript/curry-record.md)
   * [Exhaustive conditionals with ADTs](programming/typescript/exhaustive-conditionals-with-adts.md)
+  * [`newtype`](programming/typescript/newtype.md)
 
 ## CLI
 
