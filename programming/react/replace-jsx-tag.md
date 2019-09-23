@@ -1,5 +1,7 @@
 # Replace JSX tag
 
+> (Note: this is redundant if you are using an editor with LSP support, where you can rename symbols using the language server instead of regex!)
+
 The following (Vim-regex flavored) `sed` string replaces a JSX tag name while maintaining children and props:
 
 ```sed

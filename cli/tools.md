@@ -21,6 +21,8 @@ I switched to Vim as my primary editor about a year ago out of necessity. Our Do
 
 LSPs are the servers that power certain language features for VSCode such as showing inline type declarations, jumping to definitions, and advanced code completion. Coc brings this power to Vim, and Neovim utilizes this newfound power to its fullest. Finally, Ale adds linting that doesn't cause the editor to freeze by leveraging Vim's new(ish) async functionalities. My editor no longer competes with everything else for system resources, and I enjoy all of VSCode's advanced features straight from Vim.
 
+As a usage example, I have `<F7>` and `<F8>` bound to `coc-diagnostic-prev` and `coc-diagnostic-next`, and `K` bound to a function to show documentation in a Neovim popup, replicating VSCode behavior. `gd` jumps to any definition, and `<Leader>rn` renames any symbol globally throughout a codebase -- no more regex-based find-replacing!
+
 The one pain point is that it can be difficult to integrate with existing Vim setups, as many plugins are quite opinionated. Coc also has its own extension ecosystem, which can be intimidating to wade through. But the final result is oh so worth it.
 
 ## [fasd](https://github.com/clvv/fasd) - full featured quickjump utility
