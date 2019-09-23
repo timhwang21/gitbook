@@ -28,8 +28,11 @@ The one pain point is that it can be difficult to integrate with existing Vim se
 Autojump and rupa/z are great tools, so great that almost everyone who picks them up are satisfied forever. fasd is a small incremental enhancement on top of these tools, with slightly more sophisticated commands that offer more flexibility. Instead of being limited to `cd`ing around, fasd can return fuzzy matches for files and directories. This is super convenient and allows for shortcuts like the following:
 
 ```sh
-vim `f some_file`                   # the subshell will expand to the best matching file
-mv `f some_file` `d some_directory` # will expand to the best matching file and move that to the best matching directory
+# the subshell will expand to the best matching file
+vim `f some_file`
+
+# will expand to the best matching file and move that to the best matching directory
+mv `f some_file` `d some_directory`
 ```
 
 There is also an interactive selection CLI for multiple matches, but in all honesty I have not used it a single time ever.

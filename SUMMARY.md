@@ -14,6 +14,7 @@
 
 * Shell
   * [`ag`](cli/sh/ag.md)
+  * `jq` (TODO)
 * Vim
   * [Batch editing](cli/vim/batch-editing.md)
   * [External commands](cli/vim/external-commands.md)
@@ -22,12 +23,11 @@
 
 ## Reading notes
 
-* TBA
+* TODO (list "quality resources" I follow)
 
 ## Personal
 
-* About (TBA)
-* Portfolio (TBA)
+* [About](personal/about.md)
 * [Github](https://github.com/timhwang21)
 * [LinkedIn](https://linkedin.com/in/timhwang21)
 * [Photography](https://timhwang21.myportfolio.com)
