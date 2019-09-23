@@ -25,6 +25,8 @@
 
 * TODO (list "quality resources" I follow)
 
+## [Uncategorized](uncategorized.md)
+
 ## Personal
 
 * [About](personal/about.md)
