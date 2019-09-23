@@ -18,10 +18,7 @@
   * [Batch editing](cli/vim/batch-editing.md)
   * [External commands](cli/vim/external-commands.md)
   * [Registers](cli/vim/registers.md)
-
-## Tools
-
-* TBA (tools I enjoy using and recommend)
+* [Tools](cli/tools.md)
 
 ## Reading notes
 
