@@ -22,6 +22,10 @@
   * [Registers](cli/vim/registers.md)
 * [Tools](cli/tools.md)
 
+## μ-blog
+
+* [2019](microblog/2019.md)
+
 ## Reading notes
 
 * TODO (list "quality resources" I follow)
