@@ -22,9 +22,9 @@
   * [Registers](cli/vim/registers.md)
 * [Tools](cli/tools.md)
 
-## μ-blog
+## Blog
 
-* [2019](microblog/2019.md)
+* [2019](blog/2019.md)
 
 ## Reading notes
 

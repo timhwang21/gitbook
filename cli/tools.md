@@ -1,8 +1,10 @@
 # Tools
 
-Most of the CLI tools I heavily use can be found in my [dotfiles](https://github.com/timhwang21/dotfiles/blob/master/bootstrap-download.sh). These are the tools I consider to provide significant productivity boosts, and are tools I automatically install on any new machine.
+In my opinion, optimizing and building proficiency in the tools you use is one of the highest rate of return activities you can do as an engineer. Good tools are productivity multipliers, and give their benefit across different contexts.
 
-Out of these, several stand out as being incredibly useful and not necessarily well-known. I consider these extremely large productivity multipliers and would recommend them to anyone.
+Below are several tools that stand out to me as being both incredibly useful and not necessarily well-known (or have benefits that aren't easily conveyed).
+
+For a full list of the tools I use, take a look at my [dotfiles](https://github.com/timhwang21/dotfiles/blob/master/bootstrap-download.sh).
 
 ## [asciinema](https://github.com/asciinema/asciinema) - terminal recorder
 
