@@ -4,7 +4,9 @@ Generally, when dealing with a record value that may have one of several sets of
 
 Sometimes, however, we're not in control of the interface in question, and cannot add this tag. Other times, it is simply awkward to do so. One common case where this occurs is in React components that provide flexible APIs, where several different props are provided to solve a particular use case, and where these props are mutually exclusive.
 
-As a simple example, imagine a `<Button/>` component that has the following props: `{ size?: 'sm' | 'md' | 'lg' }`, and the following usage: `<Button size="sm"/>`. We get the bright idea to encode these props as booleans, such that our props are now `{ sm?: boolean; md?: boolean; lg?: boolean }`, which lets us do `<Button sm/>`, `<Button md/>`, and `<Button lg/>`. This is kind of neat, but what happens when someone does `<Button sm md/>`? This is an invalid combination of props. While I generally recommend avoiding this pattern, sometimes dealing with it is unavoidable.
+As a simple example, imagine a `<Button/>` component that has the following props: `{ size?: 'sm' | 'md' | 'lg' }`, and the following usage: `<Button size="sm"/>`. We get the bright idea to encode these props as booleans, such that our props are now `{ sm?: boolean; md?: boolean; lg?: boolean }`, which lets us do `<Button sm/>`, `<Button md/>`, and `<Button lg/>`. This is kind of neat, but what happens when someone does `<Button sm md/>`? This is an invalid combination of props.
+
+While I generally recommend avoiding this pattern and using ADTs to achieve a similar effect, sometimes dealing with tagless unions is unavoidable.
 
 ## Real-world example: React Router
 
@@ -93,7 +95,7 @@ type XOR<T, U> = (T | U) extends object
 
 Using this type constructor, we can achieve our goal:
 
-```tsx
+```typescript
 type BetterRouteProps = RoutePropsCommon &
   XOR<RoutePropsComponent, RoutePropsRender>;
 
@@ -143,3 +145,8 @@ One major downside of this approach comes from the way Typescript "unrolls" this
 Pretty opaque if you're not already familiar with the internal workings of this type.
 
 Even so, this is a nice trick to be aware of, when using an ADT is not an option.
+
+## Resources
+
+- [`XOR` discussion on Github](https://timhwang21.gitbook.io/index/programming/typescript/xor-type)
+- [Properties of `XOR`](https://en.wikipedia.org/wiki/Exclusive_or#Properties)
