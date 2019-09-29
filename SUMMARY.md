@@ -29,7 +29,11 @@
 
 ## Reading notes
 
-* TODO (list "quality resources" I follow)
+* Frontend
+  * [Comlink](reading-notes/frontend/comlink.md)
+* Backend
+* DevOps
+  * [Getting started](reading-notes/devops/getting-started.md)
 
 ## [Uncategorized](uncategorized.md)
 
