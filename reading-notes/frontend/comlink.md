@@ -18,3 +18,5 @@
 * [Workerize Loader](https://github.com/developit/workerize-loader) is a Webpack loader that automatically (with less magic) processes modules by name or via the `'workerize-loader!'` import helper.
 * [Clooney](https://github.com/GoogleChromeLabs/clooney) is a helper library that abstracts away workers entirely. Exposes a function that wraps a class (no functions allowed, unfortunately) and makes all its functions async. Under the hood, the class is actually running in a worker. This paired with Worker Plugin seems like the most "batteries included" approach.
 * A `comlink-loader` package exists, but is [unofficially deprecated](https://github.com/GoogleChromeLabs/comlink/issues/253). Worker Plugin is the official Google Chrome Labs recommendation.
+* [Workly](https://github.com/pshihn/workly) looks like a dead simple library that's admittedly less flexible, but super easy to drop in. No bundler interaction at all needed.
+* [Greenlet](https://github.com/developit/greenlet) is an _even simpler_ version of Workly that is _even less flexible_, and only accepts functions. If you're only ever workerizing functions, this seems like the way to go!
