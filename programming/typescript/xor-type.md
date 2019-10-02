@@ -132,6 +132,26 @@ We can extend this by chaining as many `XOR`s as we need.
 This declaration is quite verbose. If anyone can give advice on writing a type `type XOR<T, K extends keyof T>` that can be used like `type EvenBetterRouteProps = XOR<RouteProps, 'render' | 'component' | 'children'>`, I'd love to see it! Currently it doesn't seem possible to create a non-record mapped type, but I've been surprised before.
 {% endhint %}
 
+{% hint style="info" %}
+Reddit user [/u/TwiNighty](https://old.reddit.com/r/typescript/comments/da4rp3/checking_for_interface_exclusivity_using_xor_when/f266w4e/) suggested an alternative, much simpler approach for this use case that uses the same principles (though doesn't use `XOR`). Thanks!
+
+```typescript
+type OneOf<T, K extends keyof T> = Omit<T, K> &
+  {
+    [k in K]: Pick<Required<T>, k> &
+      {
+        [k1 in Exclude<K, k>]?: never;
+      };
+  }[K];
+
+type EvenBetterRouteProps = OneOf<
+  RouteProps,
+  "component" | "render" | "children"
+>;
+```
+
+{% endhint %}
+
 ## Downsides
 
 One major downside of this approach comes from the way Typescript "unrolls" this type. For example, here's a sample type error returned by Typescript:
