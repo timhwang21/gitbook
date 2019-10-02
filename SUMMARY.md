@@ -16,7 +16,7 @@
 
 * Shell
   * [`ag`](cli/sh/ag.md)
-  * `jq` (TODO)
+  * [Recipes](cli/sh/recipes.md)
 * Vim
   * [Batch editing](cli/vim/batch-editing.md)
   * [External commands](cli/vim/external-commands.md)
