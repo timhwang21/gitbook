@@ -33,7 +33,7 @@ Note that this is just one of many use cases for `newtype`s. Also note that this
 
 ```typescript
 declare const Unique: unique symbol;
-type NewType<T, Tag> = t & { [Unique]: Tag };
+type NewType<T, Tag> = T & { [Unique]: Tag };
 ```
 
 Here we create a utility for easily generating these nominal types. The `[Unique]` object key is a trick for hiding the tag from an editor's autocomplete (credits to [Dan Freeman's great article](https://dfreeman.io/whats-in-a-name/) for this trick).
