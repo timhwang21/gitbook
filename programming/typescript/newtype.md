@@ -4,6 +4,10 @@ In Haskell, a `newtype` is a construct that allows you to create a nominal type 
 
 At [Nash](https://nash.io), we have to deal with two types of currency symbols, one for fiat and one for cryptocurrency tokens. These are represented under the hood as `strings`; however, we have several functions that want to ensure they only receive either fiat symbols or crypto symbols. How can we enlist the type system's help here, while keeping our values as regular strings?
 
+{% hint style="info" %}
+Newtypes are also referred to as "opaque types".
+{% endhint %}
+
 ## Structural by default; nominal on demand
 
 By using nominal types, we can pass around values that are really strings and have functions check if they are the right "kind" of string, by tagging these strings with some hidden type information. This prevents us from making silly errors like passing a fiat symbol to a function that expects a crypto symbol.
@@ -55,6 +59,25 @@ function getAsCrypto(value: string): CryptoCurrency | never {
 ```
 
 This function takes a string and either returns the string coerced to a `CryptoCurrency`, or throws an error. Note that when transpiled to Javascript, the function's non-error case is actually a no-op -- the `newtype` lives entirely in the type system.
+
+## Other use cases
+
+### Serialization
+
+One frequently needs to serialize and deserialize structures with certain invariants, with timestamps being a very common example. Let's say in our application, we treat all dates as the following `Record`:
+
+```typescript
+interface DateRecord {
+  year: number
+  month: number
+  day: number
+  hour: number
+  minute: number
+  second: number
+}
+```
+
+We have a serializer  `serializeDate = (date: DateRecord): string` and a deserializer `parseDate = (str: string): DateRecord`, both of which do some validation. We can improve type safety and reduce the chances of deserialization errors by changing `string` in these signatures to a `SerializedDate` `newtype`. Now, we can be sure that we are only ever passing the "right" strings to `parseDate`. We can also go a bit further by typing all other sources (like API responses) with `SerializedDate` where appropriate.
 
 ## Resources
 
