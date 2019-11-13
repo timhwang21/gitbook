@@ -5,7 +5,7 @@ In Haskell, a `newtype` is a construct that allows you to create a nominal type 
 At [Nash](https://nash.io), we have to deal with two types of currency symbols, one for fiat and one for cryptocurrency tokens. These are represented under the hood as `strings`; however, we have several functions that want to ensure they only receive either fiat symbols or crypto symbols. How can we enlist the type system's help here, while keeping our values as regular strings?
 
 {% hint style="info" %}
-Newtypes are also referred to as "opaque types".
+Newtypes are also referred to as "opaque types" or "branded types".
 {% endhint %}
 
 ## Structural by default; nominal on demand
