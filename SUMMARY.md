@@ -26,6 +26,7 @@
 
 ## Blog
 
+* [2020](blog/2020.md)
 * [2019](blog/2019.md)
 
 ## Reading notes
