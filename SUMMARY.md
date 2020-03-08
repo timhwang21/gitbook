@@ -12,6 +12,8 @@
   * [`newtype`](programming/typescript/newtype.md)
   * [`OmitTypes`](programming/typescript/omit-types.md)
   * [`XOR` type](programming/typescript/xor-type.md)
+* Ruby
+  * [RSpec](programming/ruby/rspec.md)
 
 ## CLI
 
