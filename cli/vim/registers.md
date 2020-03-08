@@ -17,16 +17,7 @@
 Note that since macros are just command sequences stored as a string in a register, you can edit macros this way as well.
 
 ```sh
-:let @q='<Ctrl-r>q # ...and then modify
-```
-
-## Insert word under cursor
-
-Very useful with `:Ag`, or when doing find/replace.
-
-```sh
-:Ag <Ctrl-r><Ctrl-w>
-:%s/<Ctrl-r><Ctrl-w>/replacement-string
+:let @q='<Ctrl-r>q' # ...and then modify
 ```
 
 ## Reuse contents of search register
