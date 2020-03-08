@@ -20,7 +20,9 @@
   * [Recipes](cli/sh/recipes.md)
 * Vim
   * [Batch editing](cli/vim/batch-editing.md)
+  * [`<Ctrl-r>`](cli/vim/ctrl-r.md)
   * [External commands](cli/vim/external-commands.md)
+  * [Help](cli/vim/help.md)
   * [Registers](cli/vim/registers.md)
 * [Tools](cli/tools.md)
 
