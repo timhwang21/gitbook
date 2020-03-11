@@ -17,6 +17,8 @@
 
 ## CLI
 
+* Git
+  * [`git rebase-onto`](cli/git/git-rebase-onto.md)
 * Shell
   * [`ag`](cli/sh/ag.md)
   * [Recipes](cli/sh/recipes.md)
