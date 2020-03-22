@@ -63,3 +63,13 @@ g/debugger/norm gcc
 g/pattern/norm @q
 ```
 
+### `:exe`
+
+```sh
+g/pattern/exec "norm!" "A\r"
+```
+
+When using `:norm`, you might notice that you can't insert linebreaks -- `\r` and `<CR>` is literally printed as the strings "\r" and "<CR>". `:exec(ute)` lets us actually pass in commands as strings to be executed, like `eval()`.
+
+This is a somewhat meta pattern that follows the last example. It executes the two separate commands `"norm!"` and `"A\r"` to the pattern. Before execution, the second is evaluated to "append carriage return."
+
