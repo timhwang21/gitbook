@@ -10,7 +10,7 @@ These commands can be seen as a simpler, less general-purpose alternative to mac
 
 Instead of substituting strings matching the first part with the second, runs the (command mode) command on strings matching the first part.
 
-### `:v` (`:vglobal`) (equivalent to `:!g`)
+### `:v` (`:vglobal`) (equivalent to `:g!`)
 
 Same as `:g`, but targets strings that do NOT match.
 
