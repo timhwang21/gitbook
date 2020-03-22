@@ -1,11 +1,9 @@
 # About
 
-I'm a frontend engineer mainly working with Typescript and React. While I intermittently dabble in backend (Rails and Phoenix), as of now I'm mostly content with moving divs around. After a short stint as an engineering manager, I'm currently back to being an individual contributor, which is where I feel the most productive and fulfilled.
+I'm a fullstack engineer mainly working with Typescript, React, and Rails. I currently work at the identity verification startup [Persona Identities](https://withpersona.com/), where we're building the identity layer of the internet. [We recently announced our Series A!](https://techcrunch.com/2020/01/28/persona-raises-17-5m-for-an-identify-verification-platform-the-goes-beyond-user-ids-and-passwords/)
 
-I currently work at a crypto fintech company called [Nash](https://nash.io/). We launched our decentralized exchange recently (September 2019) -- [check it out!](https://app.nash.io/) (Not available in all locations, unfortunately.)
+I wrote my first line of "real" code in October 2015. I attended the San Francisco January 2016 cohort of [App Academy](https://www.appacademy.io/), and it changed my life. I'd recommend it to anyone, and my experiences have sparked a passion for mentoring individuals looking to change careers and break into the tech world.
 
-Outside of work, I enjoy learning about type theory, category theory, and functional programming. For this, I generally code in either Haskell, Typescript, or good old pen and paper.
+Previously, I was a graduate student studying the psychology of decision making. To this date, dropping out to pursue software engineering remains one of the best decisions I've ever made.
 
-I wrote my first line of "real" code in October 2015. I attended the San Francisco January 2016 cohort of [App Academy](https://www.appacademy.io/), and it changed my life. I'd recommend it to anyone. Previously, I was a graduate student studying the psychology of decision making. To this date, dropping out to pursue software engineering remains one of the best decisions I've ever made.
-
-Outside of coding, my main creative outlet is photography. [You can check out my portfolio here.](https://timhwang21.myportfolio.com/) While I'm mostly satisfied with my pictures, I'm relieved that programming and not photography is my main source of income.
+Outside of work, I enjoy learning about type theory, category theory, and functional programming. For this, I generally code in either Haskell, Typescript, or good old pen and paper. Besides coding, my main creative outlet is photography. [You can check out my portfolio here.](https://timhwang21.myportfolio.com/)
