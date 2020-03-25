@@ -13,11 +13,14 @@ In all the following tips, you can leave out `-g` to instead search within the f
 ```sh
 # edit all matching files
 vim `ag -lQg FILENAME`
-
-# plumb file in git without typing entire path
-git log -p `ag -lQg FILENAME`
 ```
 
 {% hint style="info" %}
 This saves a step if you know exactly the filename you want to edit; however, `vim $(fzf)` is often easier.
 {% endhint %}
+
+```sh
+# plumb file in git without typing entire path
+git log -p `ag -lQg FILENAME`
+```
+

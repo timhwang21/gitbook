@@ -59,7 +59,7 @@ I use the [NerdFont](https://github.com/ryanoasis/nerd-fonts) version of [Fira C
 
 I currently use Bash (my dotfiles can be found [here](https://github.com/timhwang21/dotfiles/blob/master/settings/.bashrc)). I've been telling myself to switch to Zsh for over 3 years, but my current setup is so ingrained into my muscle memory that I've been putting it off indefinitely.
 
-I use [iTerm2](https://iterm2.com/) as my terminal.
+I use [iTerm2](https://iterm2.com/) as my terminal, though I'm currently evaluating [kitty](https://github.com/kovidgoyal/kitty) and [alacritty](https://github.com/alacritty/alacritty). Both are GPU-accelerated, which you wouldn't think is needed for a terminal emulator, but the difference is quite stunning. I will probably never go back.
 
 I've also listed some specific tools I particularly enjoy [here](cli/tools.md).
 
