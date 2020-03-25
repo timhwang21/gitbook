@@ -8,6 +8,10 @@ Useful workflows that rely on a combination of tools.
 vim -c 'tabdo Gdiff origin/master' -p $(git diff --name-only origin/master | fzf)
 ```
 
+{% hint style="info" %}
+[I've founf this useful enough to add as a git alias](https://github.com/timhwang21/dotfiles/blob/master/settings/.gitconfig#L34). The above implementation diffs against the branch point insttead of `origin/master` which results in a cleaner diff.
+{% endhint %}
+
 ### Explanation
 
 When reviewing a feature branch, sometimes you want to know how one specific feature was impacted by the branch. For example, you want to see how every file in a certain directory or with a certain name was changed.
