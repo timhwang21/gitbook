@@ -86,8 +86,20 @@ const statusCodeHandlersInferred = StatusCodeHandler({
 // Works!
 ```
 
-This works because the inferrer is a generic function that forwards its type argument to the generic type in its argument.
+This works because the inferrer is a generic function that forwards its type argument to the generic type in its argument, and Typescript allows generic functions to omit the type parameter and tries its best to elide the type.
 
 Note that we can define `StatusCodeHandler` as both a type and a value because in Typescript (and in most statically typed languages), types and values live in a separate namespace. This is convenient, because it allows for both the type and its inferrer to be imported in a single statement.
 
 One downside to this approach is that it uses a fairly abstruse technique to accomplish a fairly common task, which can lead to confusion in others reading the code down the line. However, when working with ADTs with a long list of types spanning multiple lines, it can make an utterly illegible signature easier to understand.
+
+{% hint style="info" %}
+A logical next step would be to write a generalized `inferType` function:
+
+```typescript
+const inferType = <Generic, Arg>(x: Generic<Arg>) => x
+```
+
+Unfortunately, this does not work, as [Typescript does not (currently) allow generics to be used in generics](https://github.com/Microsoft/TypeScript/issues/1213).
+
+This is a _very_ notable discussion that has been ongoing for over 5 years. If this is ever possible in Typescript, higher-kinded types will become natively available, and typeclasses like `Functor<T<~>>` and `Monad<T<~>>` will become easy to implement. (HKTs have been implemented in Typescript in the excellent [`fp-ts`](https://github.com/gcanti/fp-ts) package; however, the package is built upon an incredibly complex foundation of types.)
+{% endhint %}
