@@ -14,6 +14,7 @@
   * [Type inferrers](programming/typescript/type-inferrers.md)
   * [`XOR` type](programming/typescript/xor-type.md)
 * Ruby
+  * [Rails](programming/ruby/rails.md)
   * [RSpec](programming/ruby/rspec.md)
 
 ## CLI
