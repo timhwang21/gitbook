@@ -8,7 +8,10 @@ It's common to choose a function name or leave comments warning about this const
 // note that the primitives Symbol and BigInt are not serializable
 type FastClonablePrimitive = string | number | null | undefined | boolean
 
-type FastClonable = FastClonablePrimitive | FastClonable[] | { [x: string]: FastClonable }
+type FastClonable =
+  | FastClonablePrimitive
+  | FastClonable[]
+  | { [x: string]: FastClonable }
 
 const fastClone = <T extends FastClonable>(x: T): T = JSON.parse(JSON.serialize(x))
 ```
