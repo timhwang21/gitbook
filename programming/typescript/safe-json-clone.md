@@ -39,29 +39,23 @@ type FooType = {
   }
 }
 
-const myFoo: FooType = {
-  bar: {
-    baz: 123
-  }
-}
-
-// correctly returns a value with type FooType
-fastClone(myFoo)
-
 interface FooInterface {
   bar: {
     baz: number
   }
 }
 
-const myFoo2: FooInterface = {
+const myFoo = {
   bar: {
     baz: 123
   }
 }
 
+// correctly returns a value with type FooType
+fastClone(myFoo as FooType)
+
 // Argument of type 'FooInterface' is not assignable to parameter of type 'FastClonable'.
 //   Type 'FooInterface' is not assignable to type '{ [x: string]: FastClonable; }'.
 //     Index signature is missing in type 'FooInterface'.
-fastClone(myFoo2)
+fastClone(myFoo as FooInterface)
 ```
