@@ -6,10 +6,15 @@ It's common to choose a function name or leave comments warning about this const
 
 ```typescript
 // note that the primitives Symbol and BigInt are not serializable
-type FastClonablePrimitive = string | number | null | undefined | boolean
-
+// this is also the same as the JSON type from Typescript's docs, but with the
+// addition of undefined as a valid value:
+// https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-7.html#more-recursive-type-aliases
 type FastClonable =
-  | FastClonablePrimitive
+  | string
+  | number
+  | boolean
+  | null
+  | undefined
   | FastClonable[]
   | { [x: string]: FastClonable }
 
