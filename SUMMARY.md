@@ -11,6 +11,7 @@
   * [Exhaustive conditionals with ADTs](programming/typescript/exhaustive-conditionals-with-adts.md)
   * [`newtype`](programming/typescript/newtype.md)
   * [`OmitTypes`](programming/typescript/omit-types.md)
+  * [Safe JSON clone](programming/typescript/safe-json-clone.md)
   * [Type inferrers](programming/typescript/type-inferrers.md)
   * [`XOR` type](programming/typescript/xor-type.md)
 * Ruby
