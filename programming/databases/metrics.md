@@ -1,6 +1,6 @@
 # Metrics
 
-This will be a loosely organized crash-course collection of facts about metrics in Rails.
+This will be a loosely organized crash-course collection of facts about metrics.
 
 ## Characteristics of analytical queries
 
@@ -9,9 +9,9 @@ Analytical queries tend to...
 - Have lots of JOINs
 - Have lots of GROUP BYs
 - Aggregate subqueries
-- Concerned with many records, but only a small subset of any given record (columnar access benefits)
+- Concerned with many records, but only a small subset of any given record (columnar access, basically)
 
-On a higher level, analytical queries are differentiated from "regular" application DB operations as being OLAP(online analytical processing) vs OLTP (online transaction processing).
+On a higher level, the distinction between analytical queries and "regular" application DB operations is represented as OLAP (online analytical processing) vs. OLTP (online transaction processing).
 
 ### OLTP
 
@@ -25,7 +25,13 @@ OLAP deals with historical data and analytical queries (generally infrequent and
 
 There are many ways to approach this problem, and widely accepted solutions change quickly over time. For example, whereas in the past people would recommend ETL pipelines for heavy jobs, now it is "throw everything into Snowflake / BigQuery."
 
-Some high level performance approaches, roughly in orders of complexity:
+In general, there are three tiers of optimizations, as listed below.
+
+Loose decision making framework:
+
+- Start with "transparent" application and DB level optimizations
+- Based on business needs (real-time needed? etc.), decide on additional layers like materialized views, rollup tables, etc.
+- Based on scale needs, decide on specialized analytics infrastructure
 
 ### Optimizing existing DB usage
 
@@ -51,7 +57,9 @@ Weaknesses:
 
 - No real weaknesses besides these approaches failing once you hit a certain scale
 
-### Rollup tables
+### Precomputation
+
+#### Rollup tables
 
 Rollup aggregate data that you need to power metrics every minute / hour / day / whatever.
 
@@ -61,7 +69,6 @@ Can use [HyperLogLog](https://www.citusdata.com/blog/2017/04/04/distributed_coun
 
 Strengths:
 
-- No new infrastructure needed (just another table)
 - Works well with data retention policies (can still do analytics after data has been scrubbed)
 - The tables tend to be small so you can keep them in memory
 - Rollup tables are easier to design in a way that supports a wider range of queries than materialized views
@@ -71,11 +78,10 @@ Weaknesses:
 
 - If you want to calculate distinct counts constrained by combinations of columns, you might have to duplicate rollup data into separate rollup tables
 - Slicing and dicing in unintended ways can be hard (e.g. slice by hour when you roll per minute, count a different metric)
-- Double counting (can be solved by aggregating at the end of every rollup period, but cannot provide results until period ends, and backfilling is harder)
+  - Double counting (can be solved by aggregating at the end of every rollup period, but cannot provide results until period ends, and backfilling is harder)
+- Bad data can propagate through rollup entries and be hard to fix or even detect
 
-### Materialized views
-
-Downsides are that as you start supporting more analytics use cases, the amount of analytics Additionally, this is more logic that exists outside of the application level, further complicating deploys, etc.
+#### Materialized views
 
 Strengths:
 
@@ -85,6 +91,7 @@ Strengths:
 Weaknesses:
 
 - Amount of views needed can easily grow exponentially as business logic becomes more complex
+- Logic exists outside of application level, complicating deploys, etc.
 
 ### Specialized analytics solutions
 
@@ -117,14 +124,9 @@ Weaknesses:
 - $
 - Additional support / maintenance / complexity burden of infrastructure (cross-cloud, etc.)
 
-## Loose decision making framework
-
-- Start with "transparent" application and DB level optimizations
-- Based on business needs (real-time needed? etc.), decide on additional layers like materialized views, rollup tables, etc.
-- Based on scale needs, decide on specialized analytics infrastructure
-
 ## Analytics in Rails
 
 - Use separate controllers / namespacing instead of having `FooController#metrics` endpoints. Analytics logic should be distinct from business logic.
 - Endpoint responses are usually very tailored for specific usecases, so are optimiezd for performance and for specific charts. Standardization is of lesser importance.
 - Raw SQL will likely be more flexible and readable. ActiveRecord is optimized for application-level stuff (where the builder pattern is more useful).
+- Code data transforms by hand. Each result is likely bespoke enough where there isn't a one-size-fits-all formatting / data cleaning function.
