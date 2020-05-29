@@ -1,6 +1,6 @@
 # Metrics
 
-This will be a loosely organized crash-course collection of facts about metrics.
+This will be a loosely organized collection of facts about building analytics and metrics.
 
 ## Characteristics of analytical queries
 
@@ -147,6 +147,7 @@ Weaknesses:
 Organizational battle stories, growing pains, etc.
 
 > "I think Materialized Views are like duct tape. You can solve just about any problem with a materialized view, but if you use too many of them, you get a thing that just sucks... My current strategy is to get everything out of the OLTP database as quickly as possible. Using streaming with services like Kinesis or Kafka or whatever is great for that. For me the target is S3. Once stuff is in S3, you can process it however you want. Process the files in Aurora, EMR, or Redshift. Whatever makes sense."
+
 > "It is a nightmare if something is missing or incorrect and cascades into future metrics and even our internal analysts have a hard time tolerating this. For external customers you probably want cached computed metrics!"
 
 ## Analytics in Rails
