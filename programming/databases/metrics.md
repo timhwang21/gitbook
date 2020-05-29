@@ -59,7 +59,7 @@ Strategies like read replicas help, and are more accessible than ever -- Rails 6
 
 #### Vertical scaling
 
-Up to a certain point (approx. 1TB data, 500M rows / table as a rule of thumb), you can just throw more money at this problem and vertically scale.
+Up to a certain point (approx. 1TB data, 500M rows / table as a rule of thumb), you can just throw more money at this problem and vertically scale. However, you may eventually be spending more money than it costs to use a dedicated solution.
 
 Strengths:
 
@@ -142,8 +142,17 @@ Weaknesses:
 - $$$
 - Additional complexity burden of infrastructure (cross-cloud, etc.)
 
+## Organization evolution
+
+Organizational battle stories, growing pains, etc.
+
+> "I think Materialized Views are like duct tape. You can solve just about any problem with a materialized view, but if you use too many of them, you get a thing that just sucks... My current strategy is to get everything out of the OLTP database as quickly as possible. Using streaming with services like Kinesis or Kafka or whatever is great for that. For me the target is S3. Once stuff is in S3, you can process it however you want. Process the files in Aurora, EMR, or Redshift. Whatever makes sense."
+> "It is a nightmare if something is missing or incorrect and cascades into future metrics and even our internal analysts have a hard time tolerating this. For external customers you probably want cached computed metrics!"
+
 ## Analytics in Rails
 
 - Use separate controllers / namespacing instead of having `FooController#metrics` endpoints. Analytics logic should be distinct from business logic.
-- Endpoint responses are usually very tailored for specific usecases, so are optimiezd for performance and for specific charts. Standardization is of lesser importance.
+- Endpoint responses are usually very tailored for specific usecases, so are optimized for performance and for specific charts. Standardization is of lesser importance.
+- Raw SQL will likely be more flexible and readable. ActiveRecord is optimized for application-level stuff (where the builder pattern is more useful).
 - Code data transforms by hand. Each result is likely bespoke enough where there isn't a one-size-fits-all formatting / data cleaning function.
+- If using rollups, be careful that your jobs don't interfere with the operational application if they are expensive. You don't want an analytics-related job crippling unrelated parts of the app. Keep the analytics architecture decoupled from the application's critical path.
