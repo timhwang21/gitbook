@@ -1,12 +1,10 @@
-# Rails
-
-## Attributes
+# Attributes
 
 `attributes` acts as a way to add a typecast layer to a model. The attribute may be backed by a database column, or it can be a "transient" attribute that only exists for the lifetime of a model instance.
 
-### Use cases
+## Use cases
 
-#### Structured JSON
+### Structured JSON
 
 JSON columns can be very lightweight and flexible ways to represent data when you are not sure exactly what you schema will look like in the future, and can be a way to defer decision making until more information is known. Adding a custom type and an attribute to represent a JSON column can provide more robustness.
 
@@ -48,7 +46,7 @@ class MyCustomAttribute
 end
 ```
 
-### Sources
+## Sources
 
 - [`ActiveRecord::Attributes::ClassMethods`](https://api.rubyonrails.org/classes/ActiveRecord/Attributes/ClassMethods.html)
 - [Introduction to ActiveRecord and ActiveModel Attributes API](https://karolgalanciak.com/blog/2016/12/04/introduction-to-activerecord-and-activemodel-attributes-api/)
