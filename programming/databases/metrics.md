@@ -142,6 +142,18 @@ Weaknesses:
 - $$$
 - Additional complexity burden of infrastructure (cross-cloud, etc.)
 
+## Time series queries
+
+Surprisingly, there are not popular tools for simplifying app-level computations or post-processing related to time series data (at least for Rails).
+
+### Aggregation period
+
+Most databases have functions like `DAY()` or `WEEK()`, etc. to `GROUP BY`. However, with this approach it is hard to aggregate by periods that aren't predefined (e.g. group by every 15 days).
+
+This can be done in a fairly complex way solely at the DB level via [temporary tables and other tricks](https://stackoverflow.com/questions/232387/in-sql-how-can-you-group-by-in-ranges). However, there is also an interesting way to do this at the app level.
+
+The process involves taking the start and end points and the period, and computing all timestamps based on the period you want. Then, you can query each time range independently and combine the results. While this results in much more DB connections, it is an approach that is naturally map-reducable over a number of machines.
+
 ## Organization evolution
 
 Organizational battle stories, growing pains, etc.
