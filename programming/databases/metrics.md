@@ -81,6 +81,8 @@ One large downside is the double-counting problem, where one event may exist in 
 - Only rollup data at the end of the rollup period. Conceptually simple, but you lose real-time updating (only updates once every rollup) and can be hard to backfill data due to needing to cumulatively update rollups (e.g. if you are tracking totals and not deltas).
 - [HyperLogLog](https://www.citusdata.com/blog/2017/04/04/distributed_count_distinct_with_postgresql/) lets you slice your data in a more flexible manner; however, it is conceptually more complex, and is an approximation algorithm so doesn't work well with small datasets (which begs the question, if your data are small why not do something simpler in the first place). [Tutorial](https://www.citusdata.com/blog/2017/06/30/efficient-rollup-with-hyperloglog-on-postgres/)
 
+Another weakness important to note is the difficulty of handling entities that can change over time. As a simple case, we have a `Processable` model that asynchronously transitions from `pending` to `processed`. If an item is rolled up while pending but is then later processed, we need to go back and update the old count. If the processing time is short and predictable, we can get away with simply looking an additional period (or periods) back and recomputing the rollup. However if the processing time is unpredictable (e.g., anything requiring manual human action), we cannot do this solely at the DB level and would have to handle rollups with logic like "query every item that has updated since the last rollup period; handle items created after the rollup period normally; take items created before the rollup period and reconcile them back into existing rollups".
+
 Strengths:
 
 - The tables tend to be small so you can keep them in memory
@@ -89,6 +91,7 @@ Strengths:
 
 Weaknesses:
 
+- Hard to handle data that changes over time
 - Without HLL, slicing and dicing in unintended ways can be hard (e.g. slice by hour when you roll per minute, count a different metric); may need to store redundant rollup data in separate tables
 - Without HLL, your data will always lag by the rollup period
 - Bad data can propagate through rollup entries and be hard to fix or even detect
@@ -153,6 +156,10 @@ Most databases have functions like `DAY()` or `WEEK()`, etc. to `GROUP BY`. Howe
 This can be done in a fairly complex way solely at the DB level via [temporary tables and other tricks](https://stackoverflow.com/questions/232387/in-sql-how-can-you-group-by-in-ranges). However, there is also an interesting way to do this at the app level.
 
 The process involves taking the start and end points and the period, and computing all timestamps based on the period you want. Then, you can query each time range independently and combine the results. While this results in much more DB connections, it is an approach that is naturally map-reducable over a number of machines.
+
+## Code style
+
+- Composability and performance can be antithetical in analytics. If forced to choose between the two, copy-pasting + robust tests is usually better.
 
 ## Organization evolution
 
