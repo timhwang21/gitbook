@@ -6,6 +6,7 @@
 
 * React
   * [Replace JSX tag](programming/react/replace-jsx-tag.md)
+  * [Testing Styled Components](programming/react/testing-styled-components.md)
 * Typescript
   * [`curryRecord`](programming/typescript/curry-record.md)
   * [Exhaustive conditionals with ADTs](programming/typescript/exhaustive-conditionals-with-adts.md)
