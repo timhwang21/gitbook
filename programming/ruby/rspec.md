@@ -1,6 +1,8 @@
-# RSpec
+---
+description: Certain RSpec patterns.
+---
 
-Certain RSpec patterns.
+# RSpec
 
 ## Subject should match what is being described
 
