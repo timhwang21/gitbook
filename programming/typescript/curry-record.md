@@ -1,4 +1,4 @@
-# `curryRecord`
+# curryRecord
 
 This is an example of a function whose logic lives in the type definition rather than in the function body.
 
@@ -24,23 +24,23 @@ export const curryRecord = <F extends (x: Record<any, any>) => any>(fn: F) => <
 
 ## Breaking it down
 
-#### `export const curryRecord = <F extends (x: Record<any, any>) => any>(fn: F) => ...`
+### `export const curryRecord = <F extends (x: Record<any, any>) => any>(fn: F) => ...`
 
 The first argument is a unary function. We use the generic `<F extends...>` to enforce arity and to enforce the passed function's argument being a record. The exact type of `x` and the return type will be inferred by Typescript once a function is actually passed.
 
-#### `<T extends Partial<Parameters<F>[0]>>(a: T) => ...`
+### `<T extends Partial<Parameters<F>[0]>>(a: T) => ...`
 
 Once we pass our unary function we get a new function that takes `a: T`. `T` must be assignable to `Partial<Parameters<F>[0]>`, which means "a partial version of whatever record your unary function expects as an argument."
 
-#### `(b: Omit<Parameters<F>[0], keyof T>): ...`
+### `(b: Omit<Parameters<F>[0], keyof T>): ...`
 
 Once we pass our partial record, we get a new function that takes a record `b` that must contain all keys of `Parameters<F>[0]` that were NOT included in `a`. It checks this by omitting all keys of `a` from `Parameters<F>[0]`: the remaining keys are the keys that must be passed as a part of `b`.
 
-#### `ReturnType<F>`
+### `ReturnType<F>`
 
 The return type of the curried function should match the return type of the function we're currying in the first place. We don't know what this is, so we use `ReturnType<F>` to infer the proper type once a function is actually passed.
 
-#### `... => fn({ ...a, ...b } as Parameters<F>[0])`
+### `... => fn({ ...a, ...b } as Parameters<F>[0])`
 
 We trivially spread both partial arguments into the original function. We have to coerce this here because Typescript can't figure out that the above constraints means that `{ ...a, ...b }` will always be of type `Parameters<F>[0]`.
 
@@ -98,3 +98,4 @@ curryRecord((x: number) => 123);
 // TypeError: rejects non-unary functions
 curryRecord((x: Record<any, any>, y: Record<any, any>) => 123);
 ```
+

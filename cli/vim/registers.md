@@ -16,27 +16,28 @@
 
 Note that since macros are just command sequences stored as a string in a register, you can edit macros this way as well.
 
-```sh
+```bash
 :let @q='<Ctrl-r>q' # ...and then modify
 ```
 
 ## Reuse contents of search register
 
-Useful for when you search for something unwieldy to type and need to reuse it later (for a replace for example).
+Useful for when you search for something unwieldy to type and need to reuse it later \(for a replace for example\).
 
-```sh
+```bash
 /some-long-and-complicated-search-string # search something arcane
 :%s/<Ctrl-r>//replacement-string # reuse without retyping
 ```
 
 ## Yank to system clipboard
 
-```sh
+```bash
 "+y
 ```
 
 ## Set system clipboard contents to current filepath
 
-```sh
+```bash
 :let @+ = expand("%")
 ```
+

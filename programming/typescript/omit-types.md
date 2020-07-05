@@ -1,4 +1,4 @@
-# `OmitTypes`
+# OmitTypes
 
 One frequent annoyance that comes up in Typescript is redundant null checks. Take the following interface, which describes a standard JSONAPI resource:
 
@@ -86,7 +86,7 @@ const newUser: UserWithNoRelationships = {
 
 Again, we are fighting with the type system: we are being asked to supply a value that we know via our scheme will never exist.
 
-This can be bypassed by either explicitly passing `relationships: null` (which is cumbersome), or by declaring my user as a `Partial<ApiResource<...>>`, which loses type information for other properties we want to maintain as non-nullable. We could write a helper type `MarkKeysAsOptional<T>`, which isn't a bad solution, but leaves us with two variants of the same type (`User` and `UserWithOnlyRequiredProperties`), which complicates our type system.
+This can be bypassed by either explicitly passing `relationships: null` \(which is cumbersome\), or by declaring my user as a `Partial<ApiResource<...>>`, which loses type information for other properties we want to maintain as non-nullable. We could write a helper type `MarkKeysAsOptional<T>`, which isn't a bad solution, but leaves us with two variants of the same type \(`User` and `UserWithOnlyRequiredProperties`\), which complicates our type system.
 
 In a way, these two problems are opposites of each other. How can we construct our type in a way that fulfills both these use cases? More abstractly, how can we write a type constructor that omits "empty" keys from some other type?
 
@@ -148,5 +148,6 @@ type OmitEmpty<T> = OmitTypes<T, undefined | null | {}>
 If you know of other potentially useful use cases, please let me know! [Or you can directly file a PR here.](https://github.com/timhwang21/gitbook)
 
 {% hint style="info" %}
-I've since found that this (and other handy types) can be found in the library [ts-essentials](https://github.com/krzkaczor/ts-essentials#OmitProperties). Check it out!
+I've since found that this \(and other handy types\) can be found in the library [ts-essentials](https://github.com/krzkaczor/ts-essentials#OmitProperties). Check it out!
 {% endhint %}
+

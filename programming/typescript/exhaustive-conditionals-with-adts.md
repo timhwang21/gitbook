@@ -25,7 +25,7 @@ const reducer = (state: number, action: CounterAction): number => {
 };
 ```
 
-What happens here is that `action` is initially typed as `"INCREMENT" | "DECREMENT" | "SING_AND_DANCE"`. With every `case` that is handled, the handled literal value is ejected from the type; as such, the inferred type of `action` becomes `"DECREMENT" | "SING_AND_DANCE"` after the first case, and then just `"SING_AND_DANCE"` after the second (a process known as [type narrowing](https://www.typescriptlang.org/docs/handbook/advanced-types.html#type-guards-and-differentiating-types)). Because the function exits at this point, the type checker knows that there is an unhandled type remaining, and emits an error.
+What happens here is that `action` is initially typed as `"INCREMENT" | "DECREMENT" | "SING_AND_DANCE"`. With every `case` that is handled, the handled literal value is ejected from the type; as such, the inferred type of `action` becomes `"DECREMENT" | "SING_AND_DANCE"` after the first case, and then just `"SING_AND_DANCE"` after the second \(a process known as [type narrowing](https://www.typescriptlang.org/docs/handbook/advanced-types.html#type-guards-and-differentiating-types)\). Because the function exits at this point, the type checker knows that there is an unhandled type remaining, and emits an error.
 
 ## Exhaustiveness checking with ADTs
 
@@ -56,9 +56,9 @@ interface CounterSingAndDanceAction extends GenericAction {
 type CounterAction = CounterUpdateAction | CounterSingAndDanceAction;
 ```
 
-Here, note that `CounterUpdateAction` and `CounterSingAndDanceAction` both extend a shared generic interface. When there are combined into `CounterAction`, they end up forming a **discriminated union** or **algebraic data type** (ADT). A discriminated union is composed of a **discriminant**, which is a propery whose value is unique across types, and a **union**, which is a sum type of all the discriminated types. Here, `type: "COUNTER_UPDATE" | "COUNTER_SING_AND_DANCE"` is the discriminant, while `type CounterAction` is the union. (Note that we never explicitly specified that `type` should be the discriminant -- it is automatically inferred. It's possible to have multiple discriminants, [as long as you adhere to the rules of discriminated unions.](https://github.com/Microsoft/TypeScript/issues/10586))
+Here, note that `CounterUpdateAction` and `CounterSingAndDanceAction` both extend a shared generic interface. When there are combined into `CounterAction`, they end up forming a **discriminated union** or **algebraic data type** \(ADT\). A discriminated union is composed of a **discriminant**, which is a propery whose value is unique across types, and a **union**, which is a sum type of all the discriminated types. Here, `type: "COUNTER_UPDATE" | "COUNTER_SING_AND_DANCE"` is the discriminant, while `type CounterAction` is the union. \(Note that we never explicitly specified that `type` should be the discriminant -- it is automatically inferred. It's possible to have multiple discriminants, [as long as you adhere to the rules of discriminated unions.](https://github.com/Microsoft/TypeScript/issues/10586)\)
 
-We can update our example to use these types. Let's refactor our `INCREMENT` and `DECREMENT` actions into a single update action that takes a number to add (ignoring the fact that this is now no longer really a "counter").
+We can update our example to use these types. Let's refactor our `INCREMENT` and `DECREMENT` actions into a single update action that takes a number to add \(ignoring the fact that this is now no longer really a "counter"\).
 
 ```typescript
 // TypeError: return type does not include 'undefined'.
@@ -102,7 +102,7 @@ const reducer = (state: number, action: CounterAction): number => {
 };
 ```
 
-This pattern can be useful when we are handling an ADT but not necessarily returning a value (for example, if we are enacting a side effect based on an ADT). The previous pattern relies on the return type to properly typecheck, and if the "reducer" returns `void`, the unhandled case would not be reported as a type error. Here, because we are passing a possibly non-`never` value into `matchNotExhaustive` which expects a `never`, we get a type error independent of the reducer's return type.
+This pattern can be useful when we are handling an ADT but not necessarily returning a value \(for example, if we are enacting a side effect based on an ADT\). The previous pattern relies on the return type to properly typecheck, and if the "reducer" returns `void`, the unhandled case would not be reported as a type error. Here, because we are passing a possibly non-`never` value into `matchNotExhaustive` which expects a `never`, we get a type error independent of the reducer's return type.
 
-As an added benefit, our type error is also much more descriptive now. Whereas previously it only told us that something was unhandled, now we are told exactly which type was not handled. (We're better than Haskell, guys!)
+As an added benefit, our type error is also much more descriptive now. Whereas previously it only told us that something was unhandled, now we are told exactly which type was not handled. \(We're better than Haskell, guys!\)
 

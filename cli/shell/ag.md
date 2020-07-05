@@ -1,4 +1,4 @@
-# `ag`
+# ag
 
 ## Filename matching
 
@@ -10,7 +10,7 @@ You can use it to operate on a list of related files by matching a directory, or
 
 In all the following tips, you can leave out `-g` to instead search within the file. This is generally useful only if your search string is very specific.
 
-```sh
+```bash
 # edit all matching files
 vim `ag -lQg FILENAME`
 ```
@@ -19,7 +19,7 @@ vim `ag -lQg FILENAME`
 This saves a step if you know exactly the filename you want to edit; however, `vim $(fzf)` is often easier.
 {% endhint %}
 
-```sh
+```bash
 # plumb file in git without typing entire path
 git log -p `ag -lQg FILENAME`
 ```

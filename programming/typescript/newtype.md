@@ -1,6 +1,6 @@
-# `newtype`
+# newtype
 
-In Haskell, a `newtype` is a construct that allows you to create a nominal type from another type. (Recall that Haskell and Typescript are both [structurally typed](https://en.wikipedia.org/wiki/Structural_type_system).) One use case is to allow differentiation of two values with the same underlying type, where one value needs to follow a separate set of constraints.
+In Haskell, a `newtype` is a construct that allows you to create a nominal type from another type. \(Recall that Haskell and Typescript are both [structurally typed](https://en.wikipedia.org/wiki/Structural_type_system).\) One use case is to allow differentiation of two values with the same underlying type, where one value needs to follow a separate set of constraints.
 
 At [Nash](https://nash.io), we have to deal with two types of currency symbols, one for fiat and one for cryptocurrency tokens. These are represented under the hood as `strings`; however, we have several functions that want to ensure they only receive either fiat symbols or crypto symbols. How can we enlist the type system's help here, while keeping our values as regular strings?
 
@@ -30,7 +30,7 @@ function getAsCrypto(value: string): CryptoCurrency | never {
 Notably, besides the actual validation function, this logic takes place entirely in the type system, and has no runtime overhead.
 
 {% hint style="info" %}
-Note that this is just one of many use cases for `newtype`s. Also note that this pattern doesn't _actually_ allow you to enforce invariants about the derived types. For that, it might be better to _actually_ make your `newtype` a separate type altogether, with its own internal logic. (For example, you can implement the type as a traditional OOP class with methods, or as an ADT with a functor, etc. instances for manipulation.)
+Note that this is just one of many use cases for `newtype`s. Also note that this pattern doesn't _actually_ allow you to enforce invariants about the derived types. For that, it might be better to _actually_ make your `newtype` a separate type altogether, with its own internal logic. \(For example, you can implement the type as a traditional OOP class with methods, or as an ADT with a functor, etc. instances for manipulation.\)
 {% endhint %}
 
 ## Breaking it down
@@ -40,7 +40,7 @@ declare const Unique: unique symbol;
 type NewType<T, Tag> = T & { [Unique]: Tag };
 ```
 
-Here we create a utility for easily generating these nominal types. The `[Unique]` object key is a trick for hiding the tag from an editor's autocomplete (credits to [Dan Freeman's great article](https://dfreeman.io/whats-in-a-name/) for this trick).
+Here we create a utility for easily generating these nominal types. The `[Unique]` object key is a trick for hiding the tag from an editor's autocomplete \(credits to [Dan Freeman's great article](https://dfreeman.io/whats-in-a-name/) for this trick\).
 
 ```typescript
 type CryptoCurrency = NewType<string, "CryptoCurrency">;
@@ -77,10 +77,11 @@ interface DateRecord {
 }
 ```
 
-We have a serializer  `serializeDate = (date: DateRecord): string` and a deserializer `parseDate = (str: string): DateRecord`, both of which do some validation. We can improve type safety and reduce the chances of deserialization errors by changing `string` in these signatures to a `SerializedDate` `newtype`. Now, we can be sure that we are only ever passing the "right" strings to `parseDate`. We can also go a bit further by typing all other sources (like API responses) with `SerializedDate` where appropriate.
+We have a serializer `serializeDate = (date: DateRecord): string` and a deserializer `parseDate = (str: string): DateRecord`, both of which do some validation. We can improve type safety and reduce the chances of deserialization errors by changing `string` in these signatures to a `SerializedDate` `newtype`. Now, we can be sure that we are only ever passing the "right" strings to `parseDate`. We can also go a bit further by typing all other sources \(like API responses\) with `SerializedDate` where appropriate.
 
 ## Resources
 
-- [`newtype` in Typescript](https://www.everythingfrontend.com/posts/newtype-in-typescript.html)
-- [Nominal types in Typescript](https://dfreeman.io/whats-in-a-name/)
-- [Pros and cons of `newtype`](http://degoes.net/articles/newtypes-suck)
+* [`newtype` in Typescript](https://www.everythingfrontend.com/posts/newtype-in-typescript.html)
+* [Nominal types in Typescript](https://dfreeman.io/whats-in-a-name/)
+* [Pros and cons of `newtype`](http://degoes.net/articles/newtypes-suck)
+

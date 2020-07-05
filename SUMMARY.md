@@ -4,36 +4,36 @@
 
 ## Programming
 
-* React
+* [React](programming/react/README.md)
   * [Replace JSX tag](programming/react/replace-jsx-tag.md)
   * [Testing Styled Components](programming/react/testing-styled-components.md)
-* Typescript
-  * [`curryRecord`](programming/typescript/curry-record.md)
+* [Typescript](programming/typescript/README.md)
+  * [curryRecord](programming/typescript/curry-record.md)
   * [Exhaustive conditionals with ADTs](programming/typescript/exhaustive-conditionals-with-adts.md)
-  * [`newtype`](programming/typescript/newtype.md)
-  * [`OmitTypes`](programming/typescript/omit-types.md)
+  * [newtype](programming/typescript/newtype.md)
+  * [OmitTypes](programming/typescript/omit-types.md)
   * [Safe JSON clone](programming/typescript/safe-json-clone.md)
   * [Type inferrers](programming/typescript/type-inferrers.md)
-  * [`XOR` type](programming/typescript/xor-type.md)
-* Ruby
+  * [XOR type](programming/typescript/xor-type.md)
+* [Ruby](programming/ruby/README.md)
   * [RSpec](programming/ruby/rspec.md)
-* Rails
+* [Rails](programming/rails/README.md)
   * [Attributes](programming/rails/attributes.md)
-* Databases
+* [Databases](programming/databases/README.md)
   * [Metrics](programming/databases/metrics.md)
 
 ## CLI
 
-* Git
-  * [`git rebase-onto`](cli/git/git-rebase-onto.md)
-* Shell
-  * [`ag`](cli/sh/ag.md)
-  * [Recipes](cli/sh/recipes.md)
-* Vim
+* [Git](cli/git/README.md)
+  * [git rebase-onto](cli/git/git-rebase-onto.md)
+* [Shell](cli/shell/README.md)
+  * [ag](cli/shell/ag.md)
+  * [Recipes](cli/shell/recipes.md)
+* [Vim](cli/vim/README.md)
   * [Batch editing](cli/vim/batch-editing.md)
-  * [`<Ctrl-r>`](cli/vim/ctrl-r.md)
+  * [&lt;Ctrl-r&gt;](cli/vim/ctrl-r.md)
   * [External commands](cli/vim/external-commands.md)
-  * [`:global`](cli/vim/global.md)
+  * [:global](cli/vim/global.md)
   * [Help](cli/vim/help.md)
   * [Registers](cli/vim/registers.md)
 * [Tools](cli/tools.md)
@@ -45,10 +45,10 @@
 
 ## Reading notes
 
-* Frontend
+* [Frontend](reading-notes/frontend/README.md)
   * [Comlink](reading-notes/frontend/comlink.md)
-* Backend
-* DevOps
+* [Backend](reading-notes/backend.md)
+* [DevOps](reading-notes/devops/README.md)
   * [Getting started](reading-notes/devops/getting-started.md)
 
 ## Personal
@@ -58,3 +58,4 @@
 * [Github](https://github.com/timhwang21)
 * [LinkedIn](https://linkedin.com/in/timhwang21)
 * [Photography](https://timhwang21.myportfolio.com)
+

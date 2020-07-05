@@ -35,7 +35,7 @@ fastClone(123n)
 fastClone(new Foo())
 ```
 
-This also works generically. However, note that this approach does not work when passed an interface, [which is due to an intentional Typescript design decision](https://github.com/microsoft/TypeScript/issues/15300#issuecomment-332366024). (Note that this may change in future versions of Typescript.)
+This also works generically. However, note that this approach does not work when passed an interface, [which is due to an intentional Typescript design decision](https://github.com/microsoft/TypeScript/issues/15300#issuecomment-332366024). \(Note that this may change in future versions of Typescript.\)
 
 ```typescript
 type FooType = {
@@ -64,3 +64,4 @@ fastClone(myFoo as FooType)
 //     Index signature is missing in type 'FooInterface'.
 fastClone(myFoo as FooInterface)
 ```
+

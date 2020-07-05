@@ -6,6 +6,9 @@ Certain RSpec patterns.
 
 Instead of:
 
+{% tabs %}
+{% tab title="Ruby" %}
+{% code title="spec.rb" %}
 ```ruby
 subject { instance }
 
@@ -15,6 +18,9 @@ end
 
 expect(subject).to ...
 ```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 It is clearer to handle the update in `subject` and then frame the assertion as a change.
 
@@ -31,3 +37,4 @@ Unlike in Jest, subset matchers only work with the looser `.to match`. When usin
 ## Diffing JSON blobs
 
 RSpec inlines JSON blobs by default, which makes diffs very hard to detect. The [`super_diff`](https://github.com/mcmire/super_diff) gem helps with this by printing the diff line-by-line.
+

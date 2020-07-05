@@ -1,4 +1,4 @@
-# `git rebase-onto`
+# git rebase-onto
 
 ## Problem
 
@@ -6,7 +6,7 @@ You have a branch `feature-a`. You finish it and submit it for review, and then 
 
 Your code is reviewed and some changes are requested. You update `feature-a`, push, and merge. You want to keep `feature-b` up to date, so you check it out and run `git rebase origin/master`. However, your latest revisions lead to a self merge conflict when trying to rebase `feature-b` off of master.
 
-```
+```text
 # Before code review
 # origin/master
 master
@@ -27,3 +27,4 @@ master -> feature-a -> feature-b
 Instead of `git rebase origin/master`, use `git rebase --onto origin/master feature-a`.
 
 Specifically, this means "take all commits that are on top of `feature-a`, and place them on top of `origin/master`'s `HEAD`." In the common scenario where `feature-a` is the only difference between `origin/master` and `feature-b`, it can be thought of as "drop all changes between `origin/master`'s `HEAD` and `feature-a` inclusive."
+

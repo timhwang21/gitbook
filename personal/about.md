@@ -7,3 +7,4 @@ I wrote my first line of "real" code in October 2015. I attended the San Francis
 Previously, I was a graduate student studying the psychology of decision making. To this date, dropping out to pursue software engineering remains one of the best decisions I've ever made.
 
 Outside of work, I enjoy learning about type theory, category theory, and functional programming. For this, I generally code in either Haskell, Typescript, or good old pen and paper. Besides coding, my main creative outlet is photography. [You can check out my portfolio here.](https://timhwang21.myportfolio.com/)
+

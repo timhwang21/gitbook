@@ -4,7 +4,7 @@
 
 ![](https://raw.githubusercontent.com/timhwang21/gitbook/master/assets/images/vim.png)
 
-Standard Vim editor window (window size slightly reduced for better screenshotting).
+Standard Vim editor window \(window size slightly reduced for better screenshotting\).
 
 ![](https://raw.githubusercontent.com/timhwang21/gitbook/master/assets/images/vim-coc.png)
 
@@ -20,7 +20,7 @@ Using FZF to run an analogue of `git log -p` to quickly search a file's history.
 
 ![](https://raw.githubusercontent.com/timhwang21/gitbook/master/assets/images/vim-diff.png)
 
-Diffing files (and resolving merge conflicts) within Vim.
+Diffing files \(and resolving merge conflicts\) within Vim.
 
 ![](https://raw.githubusercontent.com/timhwang21/gitbook/master/assets/images/tig.png)
 
@@ -36,12 +36,12 @@ My setup can be found [here](https://github.com/timhwang21/dotfiles/blob/master/
 
 Several plugins I find indispensible:
 
-- [janko/vim-test](https://github.com/janko/vim-test) - Run specs asynchronously without leaving the editor.
-- [junegunn/fzf.vim](https://github.com/junegunn/fzf.vim) - Incredibly flexible fuzzy file finder. I use it for opening files, searching open buffers, searching files' git history, navigating between unstaged changes... the list goes on.
-- [neoclide/coc.nvim](https://github.com/neoclide/coc.nvim) - In my opinion, this is the most important plugin I has installed. Enables language server support for Vim, allowing for powerful, IDE like features like definition navigation, bulk renaming, etc.
-- [scrooloose/nerdtree](https://github.com/scrooloose/nerdtree) - I use this with [vim-devicons](https://github.com/ryanoasis/vim-devicons) to show filetype-based symbols by the filenames. It's aesthetically pleasing and has ergonomic shortcuts.
-- [sheerun/vim-polyglot](https://github.com/sheerun/vim-polyglot) - A fairly high quality aggregator of language configurations. I've found that it "Just Works ™" when opening files of any type, no matter how arcane.
-- Many, many Tim Pope plugins.
+* [janko/vim-test](https://github.com/janko/vim-test) - Run specs asynchronously without leaving the editor.
+* [junegunn/fzf.vim](https://github.com/junegunn/fzf.vim) - Incredibly flexible fuzzy file finder. I use it for opening files, searching open buffers, searching files' git history, navigating between unstaged changes... the list goes on.
+* [neoclide/coc.nvim](https://github.com/neoclide/coc.nvim) - In my opinion, this is the most important plugin I has installed. Enables language server support for Vim, allowing for powerful, IDE like features like definition navigation, bulk renaming, etc.
+* [scrooloose/nerdtree](https://github.com/scrooloose/nerdtree) - I use this with [vim-devicons](https://github.com/ryanoasis/vim-devicons) to show filetype-based symbols by the filenames. It's aesthetically pleasing and has ergonomic shortcuts.
+* [sheerun/vim-polyglot](https://github.com/sheerun/vim-polyglot) - A fairly high quality aggregator of language configurations. I've found that it "Just Works ™" when opening files of any type, no matter how arcane.
+* Many, many Tim Pope plugins.
 
 ### Theme
 
@@ -53,9 +53,9 @@ I use the [NerdFont](https://github.com/ryanoasis/nerd-fonts) version of [JetBra
 
 ## Terminal
 
-I currently use Bash (my dotfiles can be found [here](https://github.com/timhwang21/dotfiles/blob/master/settings/.bashrc)). I've been telling myself to switch to Zsh for over 3 years, but my current setup is so ingrained into my muscle memory that I've been putting it off indefinitely.
+I currently use Bash \(my dotfiles can be found [here](https://github.com/timhwang21/dotfiles/blob/master/settings/.bashrc)\). I've been telling myself to switch to Zsh for over 3 years, but my current setup is so ingrained into my muscle memory that I've been putting it off indefinitely.
 
 I use [kitty](https://sw.kovidgoyal.net/kitty/). It GPU-accelerated, which you wouldn't think is needed for a terminal emulator, but the difference is quite stunning. I will probably never go back. Also, the configuration is incredibly friendly.
 
-I've also listed some specific tools I particularly enjoy [here](cli/tools.md).
+I've also listed some specific tools I particularly enjoy [here](https://github.com/timhwang21/gitbook/tree/c3d91ebb46c5494ca20a12559ef13f64d30fd5cb/personal/cli/tools.md).
 

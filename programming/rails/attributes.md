@@ -48,5 +48,6 @@ end
 
 ## Sources
 
-- [`ActiveRecord::Attributes::ClassMethods`](https://api.rubyonrails.org/classes/ActiveRecord/Attributes/ClassMethods.html)
-- [Introduction to ActiveRecord and ActiveModel Attributes API](https://karolgalanciak.com/blog/2016/12/04/introduction-to-activerecord-and-activemodel-attributes-api/)
+* [`ActiveRecord::Attributes::ClassMethods`](https://api.rubyonrails.org/classes/ActiveRecord/Attributes/ClassMethods.html)
+* [Introduction to ActiveRecord and ActiveModel Attributes API](https://karolgalanciak.com/blog/2016/12/04/introduction-to-activerecord-and-activemodel-attributes-api/)
+

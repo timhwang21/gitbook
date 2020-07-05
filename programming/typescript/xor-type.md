@@ -1,6 +1,6 @@
 # XOR type
 
-Generally, when dealing with a record value that may have one of several sets of keys, a [discriminated union](https://www.typescriptlang.org/docs/handbook/advanced-types.html#discriminated-unions) (also known as a tagged union or an algebraic data type) is the correct tool for the job. In Typescript, we can add a **tag**: a shared key with a unique value to each interface. Using this tag, we can then narrow the range of possible interfaces down to a known one.
+Generally, when dealing with a record value that may have one of several sets of keys, a [discriminated union](https://www.typescriptlang.org/docs/handbook/advanced-types.html#discriminated-unions) \(also known as a tagged union or an algebraic data type\) is the correct tool for the job. In Typescript, we can add a **tag**: a shared key with a unique value to each interface. Using this tag, we can then narrow the range of possible interfaces down to a known one.
 
 Sometimes, however, we're not in control of the interface in question, and cannot add this tag. Other times, it is simply awkward to do so. One common case where this occurs is in React components that provide flexible APIs, where several different props are provided to solve a particular use case, and where these props are mutually exclusive.
 
@@ -16,7 +16,7 @@ The following usage note can be found in the documentation:
 
 > You should use only one of these props on a given `<Route>`. See their explanations below to understand the differences between them.
 
-We can see what the interface looks like from the unofficial DefinitelyTyped declarations (with irrelevant types excluded):
+We can see what the interface looks like from the unofficial DefinitelyTyped declarations \(with irrelevant types excluded\):
 
 ```typescript
 export interface RouteProps {
@@ -65,7 +65,7 @@ We want our output type to ensure that at least one of `component`, `render` and
 
 ## Exclusive OR
 
-For now, let's simplify our problem by pretending `children` doesn't exist, so we only have to deal with `component` and `render`. Now, we need some sort of binary type combinator that requires exactly one of the two arguments. This is just the exclusive OR (XOR).
+For now, let's simplify our problem by pretending `children` doesn't exist, so we only have to deal with `component` and `render`. Now, we need some sort of binary type combinator that requires exactly one of the two arguments. This is just the exclusive OR \(XOR\).
 
 Thus, we need to create a generic type `XOR<T, U>` that returns a type that enforces that either `T` or `U` is implemented, but not neither, and not both.
 
@@ -133,7 +133,7 @@ This declaration is quite verbose. If anyone can give advice on writing a type `
 {% endhint %}
 
 {% hint style="info" %}
-Reddit user [/u/TwiNighty](https://old.reddit.com/r/typescript/comments/da4rp3/checking_for_interface_exclusivity_using_xor_when/f266w4e/) suggested an alternative, much simpler approach for this use case that uses the same principles (though doesn't use `XOR`). Thanks!
+Reddit user [/u/TwiNighty](https://old.reddit.com/r/typescript/comments/da4rp3/checking_for_interface_exclusivity_using_xor_when/f266w4e/) suggested an alternative, much simpler approach for this use case that uses the same principles \(though doesn't use `XOR`\). Thanks!
 
 ```typescript
 type OneOf<T, K extends keyof T> = Omit<T, K> &
@@ -149,14 +149,13 @@ type EvenBetterRouteProps = OneOf<
   "component" | "render" | "children"
 >;
 ```
-
 {% endhint %}
 
 ## Downsides
 
 One major downside of this approach comes from the way Typescript "unrolls" this type. For example, here's a sample type error returned by Typescript:
 
-```
+```text
  Type '{}' is not assignable to type 'EvenBetterRoute'.
   Type '{}' is not assignable to type 'Pick<RouteProps, "location" | "path" | "exact" | "sensitive" | "strict"> & Without<(Without<Required<Pick<RouteProps, "component">>, Required<Pick<RouteProps, "children">>> & Required<...>) | (Without<...> & Required<...>), Required<...>> & Required<...>'.
     Property 'render' is missing in type '{}' but required in type 'Required<Pick<RouteProps, "render">>'.
@@ -168,5 +167,6 @@ Even so, this is a nice trick to be aware of, when using an ADT is not an option
 
 ## Resources
 
-- [`XOR` discussion on Github](https://timhwang21.gitbook.io/index/programming/typescript/xor-type)
-- [Properties of `XOR`](https://en.wikipedia.org/wiki/Exclusive_or#Properties)
+* [`XOR` discussion on Github](https://timhwang21.gitbook.io/index/programming/typescript/xor-type)
+* [Properties of `XOR`](https://en.wikipedia.org/wiki/Exclusive_or#Properties)
+
