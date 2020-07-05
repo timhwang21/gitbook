@@ -22,17 +22,13 @@ Using FZF to run an analogue of `git log -p` to quickly search a file's history.
 
 Diffing files (and resolving merge conflicts) within Vim.
 
-![](https://raw.githubusercontent.com/timhwang21/gitbook/master/assets/images/fira-code-ligatures.png)
-
-Demonstration of Fira Code ligatures, as seen in Haskell. `<$>` in particular is beautifully rendered.
-
 ![](https://raw.githubusercontent.com/timhwang21/gitbook/master/assets/images/tig.png)
 
 Staging files with Tig.
 
 ## Editor
 
-Currently, Vim (specifically [Neovim](https://neovim.io/)) is my editor of choice. This was largely by necessity, as a previous job required running a Dockerized blockchain during development, which made all but the most lightweight editors unusable. Plus, nothing gives quite the same satisfaction as procrastinating by tinkering with Vim settings.
+[Neovim](https://neovim.io).
 
 My setup can be found [here](https://github.com/timhwang21/dotfiles/blob/master/settings/.vimrc).
 
@@ -53,13 +49,13 @@ I started coding with [Sublime Text](https://www.sublimetext.com/3dev), and [Mon
 
 ### Font
 
-I use the [NerdFont](https://github.com/ryanoasis/nerd-fonts) version of [Fira Code](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode), which is a font with ligatures. Notably, it makes ML-derived languages look incredibly beautiful.
+I use the [NerdFont](https://github.com/ryanoasis/nerd-fonts) version of [JetBrains Mono](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/JetBrainsMono), which is a font with ligatures. It's not the most aesthetically pleasing font, but it is incredibly readable.
 
 ## Terminal
 
 I currently use Bash (my dotfiles can be found [here](https://github.com/timhwang21/dotfiles/blob/master/settings/.bashrc)). I've been telling myself to switch to Zsh for over 3 years, but my current setup is so ingrained into my muscle memory that I've been putting it off indefinitely.
 
-I use [iTerm2](https://iterm2.com/) as my terminal, though I'm currently evaluating [kitty](https://github.com/kovidgoyal/kitty) and [alacritty](https://github.com/alacritty/alacritty). Both are GPU-accelerated, which you wouldn't think is needed for a terminal emulator, but the difference is quite stunning. I will probably never go back.
+I use [kitty](https://sw.kovidgoyal.net/kitty/). It GPU-accelerated, which you wouldn't think is needed for a terminal emulator, but the difference is quite stunning. I will probably never go back. Also, the configuration is incredibly friendly.
 
 I've also listed some specific tools I particularly enjoy [here](cli/tools.md).
 
