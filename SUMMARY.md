@@ -16,6 +16,7 @@
   * [Type inferrers](programming/typescript/type-inferrers.md)
   * [XOR type](programming/typescript/xor-type.md)
 * [Ruby](programming/ruby/README.md)
+  * [Pry](programming/ruby/pry.md)
   * [RSpec](programming/ruby/rspec.md)
 * [Rails](programming/rails/README.md)
   * [Attributes](programming/rails/attributes.md)
