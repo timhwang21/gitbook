@@ -22,6 +22,7 @@
   * [Attributes](programming/rails/attributes.md)
 * [Databases](programming/databases/README.md)
   * [Metrics](programming/databases/metrics.md)
+  * [Testing indexes](programming/databases/testing-indexes.md)
 
 ## CLI
 
