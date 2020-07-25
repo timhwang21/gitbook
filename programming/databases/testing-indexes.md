@@ -2,7 +2,9 @@
 description: How to test indexes in MySQL without permanently applying them.
 ---
 
-# Testing indexes
+# Profiling
+
+## Temporary indexes
 
 The following snippet shows how to temporarily create an index, in order to evaluate its effect on execution plans.
 
@@ -25,6 +27,18 @@ EXPLAIN SELECT *; -- your query
 
 -- 4. Reset your changes
 ROLLBACK;
+```
+
+## Avoiding caching
+
+MySQL has multiple levels of caching: first, query results themselves can be cached; second, recently loaded tables might be kept in memory. For accurate benchmark times, you want to avoid caching, and you want to flush tables from memory.
+
+```sql
+SET profiling = 1; -- enable profiling for current session
+
+SELECT SQL_NO_CACHE foo...; -- do stuff with SQL_NO_CACHE after SELECT
+
+SHOW PROFILES\G -- print profiling information for session
 ```
 
 # Tricks
