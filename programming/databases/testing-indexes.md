@@ -36,7 +36,13 @@ MySQL has multiple levels of caching: first, query results themselves can be cac
 ```sql
 SET profiling = 1; -- enable profiling for current session
 
+SET SESSION innodb_max_dirty_pages_pct = 0;
+SET SESSION query_cache_size = 0;
+SET SESSION query_cache_type = 0;
+
 SELECT SQL_NO_CACHE foo...; -- do stuff with SQL_NO_CACHE after SELECT
+
+FLUSH TABLES; -- reset between test runs
 
 SHOW PROFILES\G -- print profiling information for session
 ```
