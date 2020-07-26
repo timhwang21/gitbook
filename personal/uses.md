@@ -4,19 +4,19 @@
 
 ![](https://raw.githubusercontent.com/timhwang21/gitbook/master/assets/images/vim.png)
 
-Standard Vim editor window \(window size slightly reduced for better screenshotting\).
+Standard Vim editor window.
 
 ![](https://raw.githubusercontent.com/timhwang21/gitbook/master/assets/images/vim-coc.png)
 
-Tapping into [tsserver](https://github.com/Microsoft/TypeScript/wiki/Standalone-Server-%28tsserver%29) with coc.nvim to enable IDE-like functionality. The "floating window" functionality is provided by Neovim.
+Tapping into [tsserver](https://github.com/Microsoft/TypeScript/wiki/Standalone-Server-%28tsserver%29) with [coc.nvim](https://github.com/neoclide/coc.nvim) to enable IDE-like functionality. The "floating window" functionality is provided by Neovim.
 
 ![](https://raw.githubusercontent.com/timhwang21/gitbook/master/assets/images/vim-fzf-file-search.png)
 
-Using FZF as a fuzzy file opener. Much faster than Ctrl-P, because file indexing happens asynchronously.
+Using [fzf](https://github.com/junegunn/fzf) (and [fzf.vim](https://github.com/junegunn/fzf.vim)) as a fuzzy file opener. Much faster than Ctrl-P, because file indexing happens asynchronously.
 
 ![](https://raw.githubusercontent.com/timhwang21/gitbook/master/assets/images/vim-fzf-git-log-p.png)
 
-Using FZF to run an analogue of `git log -p` to quickly search a file's history.
+Using fzf to run an analogue of `git log -p` to quickly search a file's history.
 
 ![](https://raw.githubusercontent.com/timhwang21/gitbook/master/assets/images/vim-diff.png)
 
@@ -24,7 +24,11 @@ Diffing files \(and resolving merge conflicts\) within Vim.
 
 ![](https://raw.githubusercontent.com/timhwang21/gitbook/master/assets/images/tig.png)
 
-Staging files with Tig.
+Staging files with [Tig](https://github.com/jonas/tig).
+
+![](https://raw.githubusercontent.com/timhwang21/gitbook/master/assets/images/wtfutil.png)
+
+[WTF](https://wtfutil.com/) terminal dashboard.
 
 ## Editor
 
