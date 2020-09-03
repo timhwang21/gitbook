@@ -2,6 +2,10 @@
 
 `attributes` acts as a way to add a typecast layer to a model. The attribute may be backed by a database column, or it can be a "transient" attribute that only exists for the lifetime of a model instance.
 
+{% hint style="info" %}
+Also see [`store_model`](https://github.com/DmitryTsepelev/store_model).
+{% endhint %}
+
 ## Use cases
 
 ### Structured JSON

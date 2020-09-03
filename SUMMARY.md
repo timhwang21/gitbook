@@ -5,7 +5,6 @@
 ## Programming
 
 * [React](programming/react/README.md)
-  * [Replace JSX tag](programming/react/replace-jsx-tag.md)
   * [Testing Styled Components](programming/react/testing-styled-components.md)
 * [Typescript](programming/typescript/README.md)
   * [curryRecord](programming/typescript/curry-record.md)
@@ -20,6 +19,8 @@
   * [RSpec](programming/ruby/rspec.md)
 * [Rails](programming/rails/README.md)
   * [Attributes](programming/rails/attributes.md)
+  * [Beyond MVC](programming/rails/beyond-mvc.md)
+  * [(Don't use) counter cache](programming/rails/counter-cache.md)
 * [Databases](programming/databases/README.md)
   * [Metrics](programming/databases/metrics.md)
   * [Testing indexes](programming/databases/testing-indexes.md)

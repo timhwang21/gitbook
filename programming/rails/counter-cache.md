@@ -12,5 +12,5 @@ One correct usage of counter cache might be if you wanted to show a list of enti
 Problems with counter cache:
 
 1. Brittle to maintain. If your business logic ever changes where you need to track more than 1 thing, you will need to add more counters.
-2. Often a proxy for what you want to select by, vs. the thing you want to select by itself.
+2. Often a proxy for what you want to select by, vs. the thing you want to select by itself. Similar problem to boolean blindness: do you really just want a counter? Or do you also want, e.g., the timestamp when the counter was last updated?
 
