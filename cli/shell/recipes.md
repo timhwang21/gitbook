@@ -9,7 +9,7 @@ vim -c 'tabdo Gdiff origin/master' -p $(git diff --name-only origin/master | fzf
 ```
 
 {% hint style="info" %}
-[I've founf this useful enough to add as a git alias](https://github.com/timhwang21/dotfiles/blob/master/settings/.gitconfig#L34). The above implementation diffs against the branch point insttead of `origin/master` which results in a cleaner diff.
+[I've found this useful enough to add as a git alias](https://github.com/timhwang21/dotfiles/blob/master/settings/.gitconfig#L34). The above implementation diffs against the branch point instead of `origin/master` which results in a cleaner diff.
 {% endhint %}
 
 ### Explanation

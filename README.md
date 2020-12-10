@@ -8,5 +8,5 @@ Pages are meant to be living documents, and will be written as quick references 
 
 If you're interested in my dev env setup, take a look at my [dotfiles](https://github.com/timhwang21/dotfiles/).
 
-If you'd rather browse this book in your editor, you can view the repository [here](https://github.com/timhwnag21/gitbook/).
+If you'd rather browse this book in your editor, you can view the repository [here](https://github.com/timhwang21/gitbook/).
 

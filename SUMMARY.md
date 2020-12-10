@@ -30,7 +30,6 @@
 * [Git](cli/git/README.md)
   * [git rebase-onto](cli/git/git-rebase-onto.md)
 * [Shell](cli/shell/README.md)
-  * [ag](cli/shell/ag.md)
   * [Recipes](cli/shell/recipes.md)
 * [Vim](cli/vim/README.md)
   * [Batch editing](cli/vim/batch-editing.md)
