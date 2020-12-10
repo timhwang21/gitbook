@@ -25,3 +25,13 @@ What happens is that `fzf`'s prompt opens up, letting you select a list of files
 * `vim-fugitive` \(specifically, `:Gdiff`\)
 * `fzf`
 
+## Global file search interface
+
+`fd PATTERN | fzf` is a good building block for building filterable commands.
+
+```bash
+vim `fd PATTERN | fzf`
+cat `fd PATTERN | fzf`
+# open parent folder of found file
+open "`fd PATTERN | fzf`/.."
+```
