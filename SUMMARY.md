@@ -56,7 +56,6 @@
 
 ## Personal
 
-* [About](personal/about.md)
 * [Uses](personal/uses.md)
 * [Github](https://github.com/timhwang21)
 * [LinkedIn](https://linkedin.com/in/timhwang21)
