@@ -2,28 +2,11 @@
 
 * [Intro](README.md)
 
-## Programming
+## Blog
 
-* [React](programming/react/README.md)
-  * [Testing Styled Components](programming/react/testing-styled-components.md)
-* [Typescript](programming/typescript/README.md)
-  * [curryRecord](programming/typescript/curry-record.md)
-  * [Exhaustive conditionals with ADTs](programming/typescript/exhaustive-conditionals-with-adts.md)
-  * [newtype](programming/typescript/newtype.md)
-  * [OmitTypes](programming/typescript/omit-types.md)
-  * [Safe JSON clone](programming/typescript/safe-json-clone.md)
-  * [Type inferrers](programming/typescript/type-inferrers.md)
-  * [XOR type](programming/typescript/xor-type.md)
-* [Ruby](programming/ruby/README.md)
-  * [Pry](programming/ruby/pry.md)
-  * [RSpec](programming/ruby/rspec.md)
-* [Rails](programming/rails/README.md)
-  * [Attributes](programming/rails/attributes.md)
-  * [Beyond MVC](programming/rails/beyond-mvc.md)
-  * [(Don't use) counter cache](programming/rails/counter-cache.md)
-* [Databases](programming/databases/README.md)
-  * [Metrics](programming/databases/metrics.md)
-  * [Testing indexes](programming/databases/testing-indexes.md)
+* [2021](blog/2021.md)
+* [2020](blog/2020.md)
+* [2019](blog/2019.md)
 
 ## CLI
 
@@ -41,18 +24,27 @@
   * [Registers](cli/vim/registers.md)
 * [Tools](cli/tools.md)
 
-## Blog
+## Programming
 
-* [2020](blog/2020.md)
-* [2019](blog/2019.md)
-
-## Reading notes
-
-* [Frontend](reading-notes/frontend/README.md)
-  * [Comlink](reading-notes/frontend/comlink.md)
-* [Backend](reading-notes/backend.md)
-* [DevOps](reading-notes/devops/README.md)
-  * [Getting started](reading-notes/devops/getting-started.md)
+* [React](programming/react/README.md)
+  * [Testing Styled Components](programming/react/testing-styled-components.md)
+* [Typescript](programming/typescript/README.md)
+  * [curryRecord](programming/typescript/curry-record.md)
+  * [Exhaustive conditionals with ADTs](programming/typescript/exhaustive-conditionals-with-adts.md)
+  * [newtype](programming/typescript/newtype.md)
+  * [OmitTypes](programming/typescript/omit-types.md)
+  * [Safe JSON clone](programming/typescript/safe-json-clone.md)
+  * [Type inferrers](programming/typescript/type-inferrers.md)
+  * [XOR type](programming/typescript/xor-type.md)
+* [Ruby](programming/ruby/README.md)
+  * [Pry](programming/ruby/pry.md)
+  * [RSpec](programming/ruby/rspec.md)
+* [Rails](programming/rails/README.md)
+  * [Attributes](programming/rails/attributes.md)
+  * [(Don't use) counter cache](programming/rails/counter-cache.md)
+* [Databases](programming/databases/README.md)
+  * [Metrics](programming/databases/metrics.md)
+  * [Testing indexes](programming/databases/testing-indexes.md)
 
 ## Personal
 
