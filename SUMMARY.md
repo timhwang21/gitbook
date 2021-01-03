@@ -50,6 +50,7 @@
 
 * [Uses](personal/uses.md)
 * [Github](https://github.com/timhwang21)
+* [Medium](https://timhwang21.medium.com/)
 * [LinkedIn](https://linkedin.com/in/timhwang21)
 * [Photography](https://timhwang21.myportfolio.com)
 
