@@ -13,6 +13,7 @@
 * [Git](cli/git/README.md)
   * [Bulk resolve merge conflicts](cli/git/bulk-resolve-merge-conflicts.md)
   * [git rebase-onto](cli/git/git-rebase-onto.md)
+  * [Patch from diff](cli/git/patch-from-diff.md)
 * [Shell](cli/shell/README.md)
   * [Recipes](cli/shell/recipes.md)
 * [Vim](cli/vim/README.md)
