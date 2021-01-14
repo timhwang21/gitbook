@@ -41,6 +41,7 @@
   * [RSpec](programming/ruby/rspec.md)
 * [Rails](programming/rails/README.md)
   * [Attributes](programming/rails/attributes.md)
+  * [Cheap many to many](programming/rails/cheap-many-to-many.md)
   * [(Don't use) counter cache](programming/rails/counter-cache.md)
 * [Databases](programming/databases/README.md)
   * [Metrics](programming/databases/metrics.md)
