@@ -18,6 +18,7 @@
   * [Recipes](cli/shell/recipes.md)
 * [Vim](cli/vim/README.md)
   * [Batch editing](cli/vim/batch-editing.md)
+  * [Buffers](cli/vim/buffers.md)
   * [&lt;Ctrl-r&gt;](cli/vim/ctrl-r.md)
   * [External commands](cli/vim/external-commands.md)
   * [:global](cli/vim/global.md)
