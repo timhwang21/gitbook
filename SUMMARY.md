@@ -24,6 +24,7 @@
   * [:global](cli/vim/global.md)
   * [Help](cli/vim/help.md)
   * [Registers](cli/vim/registers.md)
+  * [Splits](cli/vim/splits.md)
 * [Tools](cli/tools.md)
 
 ## Programming
