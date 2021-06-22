@@ -27,3 +27,11 @@ You can even do this automatically for a list of methods you are interested in:
   end
 end
 ```
+
+## Get filtered stack trace
+
+
+```ruby
+# at breakpoint
+caller.select {|line| line.starts_with? '/your-app-dir' }
+```
